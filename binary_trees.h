@@ -92,5 +92,15 @@ binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
 
 binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
 
+/* Function prototype */
+int binary_tree_is_bst(const binary_tree_t *tree);
+
+/* BST typedef */
+typedef struct binary_tree_s bst_t;
+
+/* Function prototypes */
+bst_t *bst_insert(bst_t **tree, int value);
+bst_t *binary_tree_node(bst_t *parent, int value);
+
 
 #endif /* BINARY_TREES_H */
