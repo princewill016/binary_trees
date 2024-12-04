@@ -1,7 +1,8 @@
 #include "binary_trees.h"
+#include <limits.h>
 
 /**
- * is_bst_helper - Recursive helper function to validate BST
+ * is_bst_helper - Recursive helper function to check if tree is a valid BST
  * @tree: Pointer to the current node
  * @min: Minimum allowed value for the current node
  * @max: Maximum allowed value for the current node
@@ -10,19 +11,19 @@
  */
 int is_bst_helper(const binary_tree_t *tree, int min, int max)
 {
-    /* Base case: empty tree is considered a valid BST */
-    if (tree == NULL)
-        return (1);
+	/* Base case: empty tree is considered a valid BST */
+	if (tree == NULL)
+		return (1);
 
-    /* Check if current node's value is within the allowed range */
-    if (tree->n <= min || tree->n >= max)
-        return (0);
+	/* Check if current node's value is within the allowed range */
+	if (tree->n <= min || tree->n >= max)
+		return (0);
 
-    /* Recursively check left and right subtrees */
-    return (
-        is_bst_helper(tree->left, min, tree->n) &&
-        is_bst_helper(tree->right, tree->n, max)
-    );
+	/* Recursively check left and right subtrees */
+	/* Left subtree must have values less than current node */
+	/* Right subtree must have values greater than current node */
+	return (is_bst_helper(tree->left, min, tree->n) &&
+		is_bst_helper(tree->right, tree->n, max));
 }
 
 /**
@@ -33,10 +34,10 @@ int is_bst_helper(const binary_tree_t *tree, int min, int max)
  */
 int binary_tree_is_bst(const binary_tree_t *tree)
 {
-    /* If tree is NULL, return 0 */
-    if (tree == NULL)
-        return (0);
+	/* If tree is NULL, it's not a valid BST */
+	if (tree == NULL)
+		return (0);
 
-    /* Use helper function with initial min and max values */
-    return (is_bst_helper(tree, INT_MIN, INT_MAX));
+	/* Use helper function with initial min and max as INT_MIN and INT_MAX */
+	return (is_bst_helper(tree, INT_MIN, INT_MAX));
 }

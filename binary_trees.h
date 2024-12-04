@@ -19,88 +19,14 @@ typedef struct binary_tree_s
     struct binary_tree_s *right;
 } binary_tree_t;
 
-/* Function to create a binary tree node */
-binary_tree_t *binary_tree_node(binary_tree_t *parent, int value);
-
-/* Function to insert a node as the left-child of another node */
-binary_tree_t *binary_tree_insert_left(binary_tree_t *parent, int value);
-
-/* Function to insert a node as the right-child of another node */
-binary_tree_t *binary_tree_insert_right(binary_tree_t *parent, int value);
-
-/* Function to delete an entire binary tree */
-void binary_tree_delete(binary_tree_t *tree);
-
-/* Function to check if a node is a leaf */
-int binary_tree_is_leaf(const binary_tree_t *node);
-
-/* Function to check if a node is a root */
-int binary_tree_is_root(const binary_tree_t *node);
-
-/* Function for pre-order traversal */
-void binary_tree_preorder(const binary_tree_t *tree, void (*func)(int));
-
-/* Function for in-order traversal */
-void binary_tree_inorder(const binary_tree_t *tree, void (*func)(int));
-
-/* Function for post-order traversal */
-void binary_tree_postorder(const binary_tree_t *tree, void (*func)(int));
-
-/* Function to measure the height of a binary tree */
-size_t binary_tree_height(const binary_tree_t *tree);
-
-/* Function to measure the depth of a node in a binary tree */
-size_t binary_tree_depth(const binary_tree_t *tree);
-
-/* Function to measure the size of a binary tree */
-size_t binary_tree_size(const binary_tree_t *tree);
-
-/* Function to count nodes with at least 1 child in a binary tree */
-size_t binary_tree_nodes(const binary_tree_t *tree);
-
-size_t binary_tree_leaves(const binary_tree_t *tree);
-
-size_t binary_tree_nodes(const binary_tree_t *tree);
-
-size_t binary_tree_height(const binary_tree_t *tree);
-int binary_tree_balance(const binary_tree_t *tree);
-
-int binary_tree_is_full(const binary_tree_t *tree);
-
-size_t binary_tree_depth(const binary_tree_t *tree);
-int is_leaf(const binary_tree_t *node);
-int binary_tree_is_perfect(const binary_tree_t *tree);
-int is_perfect_recursive(const binary_tree_t *tree, size_t current_depth,
-                         size_t leaf_depth);
-
-binary_tree_t *binary_tree_sibling(binary_tree_t *node);
-
-binary_tree_t *binary_tree_sibling(binary_tree_t *node);
-binary_tree_t *binary_tree_uncle(binary_tree_t *node);
-
-size_t binary_tree_depth(const binary_tree_t *node);
-binary_tree_t *binary_trees_ancestor(const binary_tree_t *first,
-                                     const binary_tree_t *second);
-
-void binary_tree_levelorder(const binary_tree_t *tree, void (*func)(int));
-size_t binary_tree_height(const binary_tree_t *tree);
-
-int binary_tree_is_complete(const binary_tree_t *tree);
-size_t binary_tree_height(const binary_tree_t *tree);
-
-binary_tree_t *binary_tree_rotate_left(binary_tree_t *tree);
-
-binary_tree_t *binary_tree_rotate_right(binary_tree_t *tree);
-
-/* Function prototype */
-int binary_tree_is_bst(const binary_tree_t *tree);
-
-/* BST typedef */
+/* Type definitions for different tree types */
 typedef struct binary_tree_s bst_t;
 
 /* Function prototypes */
-bst_t *bst_insert(bst_t **tree, int value);
-bst_t *binary_tree_node(bst_t *parent, int value);
+/* BST Validation Function */
+int binary_tree_is_bst(const binary_tree_t *tree);
 
+/* BST Insertion Function */
+bst_t *bst_insert(bst_t **tree, int value);
 
 #endif /* BINARY_TREES_H */
