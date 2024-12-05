@@ -19,14 +19,16 @@ typedef struct binary_tree_s
     struct binary_tree_s *right;
 } binary_tree_t;
 
-/* Type definitions for different tree types */
-typedef struct binary_tree_s bst_t;
+/* Type definitions for various tree types */
+typedef struct binary_tree_s heap_t;
 
 /* Function prototypes */
-/* BST Validation Function */
-int binary_tree_is_bst(const binary_tree_t *tree);
+int heap_extract(heap_t **root);
+int binary_tree_is_heap(const binary_tree_t *tree);
 
-/* BST Insertion Function */
-bst_t *bst_insert(bst_t **tree, int value);
+/* Helper function prototypes */
+size_t binary_tree_height(const binary_tree_t *tree);
+size_t binary_tree_size(const binary_tree_t *tree);
+int is_complete_tree(const binary_tree_t *tree);
 
 #endif /* BINARY_TREES_H */
